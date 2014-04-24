@@ -16,6 +16,7 @@ matrix:
   exclude:
     - python: "2.6"
       env: DJANGO=https://github.com/django/django/archive/master.zip
+
 before_install:
   - export PIP_USE_MIRRORS=true
   - export PIP_INDEX_URL=https://simple.crate.io/
@@ -23,5 +24,6 @@ install:
   - pip install south
   - pip install $DJANGO
   - pip install -e .
+
 script:
   - ./runtests.sh
